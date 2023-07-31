@@ -1,10 +1,13 @@
 import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import Colors from '../assets/colors/Colors';
+import Fonts from './Fonts';
 
-function Button1({title}) {
+function Button1({title, screen, navigation}) {
+  console.log(screen);
   return (
     <TouchableOpacity
+      onPress={() => navigation.navigate(screen)}
       style={{
         backgroundColor: Colors.button2,
         borderRadius: 28,
@@ -19,7 +22,7 @@ function Button1({title}) {
           textAlign: 'center',
           fontSize: 16,
           color: 'rgba(19, 181, 140, 1)',
-          fontFamily: 'Montserrat-Medium',
+          fontFamily: Fonts.medium,
         }}>
         {title}
       </Text>

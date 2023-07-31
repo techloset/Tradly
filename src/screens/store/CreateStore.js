@@ -6,8 +6,10 @@ import Business from '../../assets/images/Business.svg';
 import SectionHeader from '../../components/SectionHeader';
 import InputField from '../../components/InputField';
 import Button from '../../components/Button';
+import {useNavigation} from '@react-navigation/native';
 
 function CreateStore(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <SectionHeader icon={<BackArrow />} title="My Store" />
@@ -37,7 +39,7 @@ function CreateStore(props) {
           <InputField label="Courier Name" placeholder="Blue Dart" />
           <InputField label="Tagline" placeholder="Groceries" />
         </View>
-        <Button title="Create" />
+        <Button title="Create" screen={'EditStore'} navigation={navigation} />
       </ScrollView>
     </View>
   );

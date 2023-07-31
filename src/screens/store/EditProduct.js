@@ -7,8 +7,10 @@ import InputField from '../../components/InputField';
 import Button from '../../components/Button';
 import Group438 from '../../assets/images/Group438.svg';
 import Group439 from '../../assets/images/Group439.svg';
+import {useNavigation} from '@react-navigation/native';
 
 function EditProduct(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <SectionHeader icon={<BackArrow />} title="Edit Product" />
@@ -43,7 +45,11 @@ function EditProduct(props) {
             placeholder="Cash On Delivery"
           />
         </View>
-        <Button title="Edit Product" />
+        <Button
+          title="Edit Product"
+          screen={'AddProduct'}
+          navigation={navigation}
+        />
       </ScrollView>
     </View>
   );
@@ -60,12 +66,12 @@ const styles = StyleSheet.create({
     paddingBottom: 13,
   },
   business: {
-    paddingTop: 60,
+    paddingTop: 10,
     paddingBottom: 20,
     flexDirection: 'row',
     justifyContent: 'center',
+    alignItems: 'center',
     marginBottom: 2,
-    backgroundColor: Colors.grey,
   },
   text: {
     fontSize: 14,

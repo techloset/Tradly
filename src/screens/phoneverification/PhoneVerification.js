@@ -4,8 +4,10 @@ import {styles} from './VerificationStyle';
 import Button1 from '../../components/Button1';
 import Back from '../../assets/images/Back.svg';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
+import {useNavigation} from '@react-navigation/native';
 
-function PhoneVerification(props) {
+function PhoneVerification() {
+  let navigation = useNavigation();
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -29,7 +31,11 @@ function PhoneVerification(props) {
         <Text style={styles.signup}>Resend new code</Text>
       </TouchableOpacity>
       <View style={styles.button}>
-        <Button1 title={'Verify'} />
+        <Button1
+          title={'Verify'}
+          screen={'TabNavigator'}
+          navigation={navigation}
+        />
       </View>
     </View>
   );

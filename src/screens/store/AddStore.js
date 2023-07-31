@@ -1,19 +1,19 @@
 import React from 'react';
-import {View, StyleSheet, Text, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import Colors from '../../assets/colors/Colors';
 import Bars1 from '../../components/Bars1';
-import Home from '../../assets/images/home.svg';
-import Search from '../../assets/images/Search.svg';
-import Order from '../../assets/images/Order.svg';
-import Store from '../../assets/images/Store.svg';
-import Profile from '../../assets/images/Profile.svg';
-import TabItem from '../../components/IconBars';
 import Avatar4 from '../../assets/images/avatar4.svg';
 import SearchInput from '../../components/SearchInput';
 import Group441 from '../../assets/images/Group441.svg';
 import Group442 from '../../assets/images/Group442.svg';
 
-function AddStore(props) {
+function AddStore({navigation}) {
   return (
     <View style={styles.container}>
       <Bars1 title="My Store" />
@@ -26,7 +26,9 @@ function AddStore(props) {
           <Text style={styles.editText}>Edit store</Text>
         </View>
         <View style={styles.store}>
-          <Text style={styles.storeText}> View Store</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('StoreProfile')}>
+            <Text style={styles.storeText}> View Store</Text>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.removeView}>
@@ -40,17 +42,13 @@ function AddStore(props) {
           <Text style={styles.productText}>Products</Text>
           <View style={styles.group}>
             <Group441 />
-            <Group442 />
+            <TouchableOpacity
+              onPress={() => navigation.navigate('EditProduct')}>
+              <Group442 />
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
-      <View style={styles.bar}>
-        <TabItem icon={<Home />} label="Home" />
-        <TabItem icon={<Search />} label="Browse" />
-        <TabItem icon={<Store />} label="Store" />
-        <TabItem icon={<Order />} label="Order History" />
-        <TabItem icon={<Profile />} label="Profile" />
-      </View>
     </View>
   );
 }

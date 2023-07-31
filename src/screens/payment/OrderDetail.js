@@ -1,5 +1,11 @@
 import React from 'react';
-import {View, StyleSheet, Text, ScrollView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import Colors from '../../assets/colors/Colors';
 import Vector4 from '../../assets/images/Vector4.svg';
 import SectionHeader from '../../components/SectionHeader';
@@ -8,8 +14,10 @@ import Vector3 from '../../assets/images/Vector3.svg';
 import Done from '../../assets/images/Done.svg';
 import Line2 from '../../assets/images/Line2.svg';
 import Group9 from '../../assets/images/Group9.svg';
+import Disc from '../../components/Disc';
+import Fonts from '../../components/Fonts';
 
-function OrderDetail(props) {
+function OrderDetail({navigation}) {
   return (
     <View style={styles.container}>
       <SectionHeader title="Order Details" icon={<Vector4 />} />
@@ -22,7 +30,8 @@ function OrderDetail(props) {
         <Rectangle292 />
         <View style={styles.cocaView}>
           <Text style={styles.cocaText}>Coca Cola</Text>
-          <Text style={styles.price}>$25</Text>
+
+          <Disc originalPrice={50} discountPercentage={50} />
           <View style={{flexDirection: 'row', marginTop: 10}}>
             <Text style={styles.qty}>Qty : 1</Text>
             <Vector3 style={{position: 'relative', top: 8, left: 5}} />
@@ -85,7 +94,9 @@ function OrderDetail(props) {
           <Text style={styles.tradlyText1}>Mobile: 9876543210</Text>
         </View>
         <View style={styles.homeView}>
-          <Text style={styles.homeText}>Back To Home</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Dashboard')}>
+            <Text style={styles.homeText}>Back To Home</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
@@ -105,7 +116,7 @@ const styles = StyleSheet.create({
   },
   addressText: {
     fontSize: 24,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: Fonts.bold,
     color: Colors.neutralBlack,
   },
   rec: {
@@ -121,19 +132,19 @@ const styles = StyleSheet.create({
   },
   cocaText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: Fonts.regular,
     color: Colors.neutralBlack,
     marginTop: 12,
   },
   price: {
     fontSize: 18,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: Fonts.bold,
     color: Colors.primary,
     marginTop: 12,
   },
   qty: {
     fontSize: 12,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   track: {
@@ -144,11 +155,11 @@ const styles = StyleSheet.create({
   },
   trackText: {
     fontSize: 16,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Fonts.semiBold,
     color: Colors.blackText,
   },
   id: {
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     fontSize: 14,
     color: Colors.blackText1,
     marginTop: 9,
@@ -167,18 +178,17 @@ const styles = StyleSheet.create({
   },
   orderView: {
     flexDirection: 'row',
-    // justifyContent: 'space-around',
   },
   order: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.blackText,
     marginLeft: 5,
   },
   date: {
     paddingLeft: 145,
     fontSize: 10,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.blackText1,
   },
   orderView2: {
@@ -188,21 +198,21 @@ const styles = StyleSheet.create({
   },
   date2: {
     fontSize: 10,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.blackText1,
     marginTop: 6,
   },
   date3: {
     paddingLeft: 95,
     fontSize: 10,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.blackText1,
     marginTop: 40,
   },
   date4: {
     paddingLeft: 165,
     fontSize: 10,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.blackText1,
     marginTop: 40,
   },
@@ -214,7 +224,7 @@ const styles = StyleSheet.create({
   addressText: {
     color: Colors.blackText,
     fontSize: 16,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Fonts.semiBold,
   },
   tradly: {
     backgroundColor: Colors.white,
@@ -223,12 +233,12 @@ const styles = StyleSheet.create({
   },
   tradlyText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.blackText,
   },
   tradlyText1: {
     fontSize: 12,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.blackText1,
     marginTop: 8,
   },
@@ -240,7 +250,7 @@ const styles = StyleSheet.create({
   },
   homeText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Fonts.semiBold,
     color: Colors.blackText,
   },
 });

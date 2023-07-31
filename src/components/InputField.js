@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, TextInput, Text} from 'react-native';
 import Colors from '../assets/colors/Colors';
+import Fonts from './Fonts';
 
 function InputField({label, ...otherProps}) {
   return (
@@ -23,16 +24,17 @@ const styles = StyleSheet.create({
     borderColor: Colors.grey,
   },
   label: {
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: Fonts.regular,
     fontSize: 14,
     color: Colors.neutralBlack,
     marginBottom: 8,
   },
   input: {
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     fontSize: 16,
     color: '#333A42',
     marginLeft: -4,
+    textAlign: 'left',
   },
 });
 

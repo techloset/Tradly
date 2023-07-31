@@ -1,5 +1,6 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../../assets/colors/Colors';
+import Fonts from '../../components/Fonts';
 
 export const styles = StyleSheet.create({
   container: {
@@ -9,8 +10,8 @@ export const styles = StyleSheet.create({
   },
   container2: {
     backgroundColor: Colors.primary,
-    // flex: 0.5,
-    paddingBottom: 10,
+    // flex: 0.6,
+    // paddingBottom: -30,
     paddingLeft: 30,
     // zIndex: 1,
     // marginBottom: 10,
@@ -19,12 +20,12 @@ export const styles = StyleSheet.create({
     // flex: 1,
   },
   rectangle: {
-    width: 307,
+    width: '60%',
     // left: 31,
     backgroundColor: Colors.white,
-    marginTop: 200,
+    marginTop: 150,
     borderRadius: 8,
-    justifyContent: 'center',
+    // justifyContent: 'center',
     alignItems: 'center',
     marginRight: 20,
     paddingTop: 57,
@@ -43,8 +44,8 @@ export const styles = StyleSheet.create({
   },
   text: {
     fontSize: 20,
-    fontFamily: 'Montserrat-Medium',
-    color: '#33907C',
+    fontFamily: Fonts.medium,
+    color: Colors.primary,
     textAlign: 'center',
     marginTop: 42,
   },
@@ -53,14 +54,20 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     height: 15,
     flexDirection: 'row',
-    marginTop: 54,
-    marginBottom: 50,
+    // marginTop: 54,
+    // marginBottom: 50,
+    // backgroundColor: Colors.white,
+    position: 'absolute',
+    top: '83%',
+    left: 0,
+    right: 0,
   },
   dot: {
     backgroundColor: 'rgba(51, 144, 124, 1)',
     height: 12,
     width: 12,
     borderRadius: 10,
+    marginLeft: 10,
   },
   dot1: {
     backgroundColor: 'rgba(51, 144, 124, 0.5)',
@@ -68,5 +75,14 @@ export const styles = StyleSheet.create({
     width: 12,
     borderRadius: 10,
     marginLeft: 10,
+  },
+  button: {
+    backgroundColor: Colors.primary,
+    borderRadius: 28,
+    width: '90%',
+    height: 56,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 20,
   },
 });

@@ -53,6 +53,7 @@ function Pet(props) {
         renderItem={renderItem}
         keyExtractor={item => item.id}
         numColumns={2}
+        contentContainerStyle={styles.flat}
       />
     </View>
   );
@@ -63,6 +64,9 @@ const styles = StyleSheet.create({
   container1: {
     backgroundColor: Colors.primary,
     paddingBottom: 13,
+  },
+  flat: {
+    paddingHorizontal: 12,
   },
 });
 export default Pet;

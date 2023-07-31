@@ -1,13 +1,25 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Colors from '../assets/colors/Colors';
+import Fonts from './Fonts';
+import {useNavigation} from '@react-navigation/native';
 
 function SectionHeader({title, icon}) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.gView}>
-        {icon}
-        <Text style={styles.g}>{title}</Text>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          {icon}
+        </TouchableOpacity>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}>
+          <Text style={styles.g}>{title}</Text>
+        </View>
       </View>
     </View>
   );
@@ -21,12 +33,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    width: '70%',
   },
   g: {
     fontSize: 24,
-    fontFamily: 'Montserrat-Bold',
-    color: 'rgba(255, 255, 255, 1)',
+    fontFamily: Fonts.bold,
+    color: Colors.white,
   },
 });
 

@@ -12,8 +12,11 @@ import BackArrow from '../../assets/images/BackArrow.svg';
 import SectionHeader from '../../components/SectionHeader';
 import Button from '../../components/Button';
 import MyFlatList from '../../components/MyFlatList';
+import {useNavigation} from '@react-navigation/native';
+import Fonts from '../../components/Fonts';
 
 function AddPayment(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <SectionHeader icon={<BackArrow />} title="Payment Option" />
@@ -81,7 +84,11 @@ function AddPayment(props) {
           </View>
         </View>
         <View style={styles.button}>
-          <Button title="Checkout" />
+          <Button
+            title="Checkout"
+            screen={'OrderDetail'}
+            navigation={navigation}
+          />
         </View>
       </ScrollView>
     </View>
@@ -112,7 +119,7 @@ const styles = StyleSheet.create({
     marginTop: 22,
     marginHorizontal: 45,
     fontSize: 14,
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: Fonts.regular,
     color: 'rgba(0, 0, 0, 0.2)',
   },
   dotContainer: {
@@ -156,7 +163,7 @@ const styles = StyleSheet.create({
   },
   cardText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Fonts.semiBold,
     color: 'rgba(79, 79, 79, 1)',
     marginLeft: 10,
   },
@@ -169,13 +176,12 @@ const styles = StyleSheet.create({
   address2: {
     backgroundColor: Colors.white,
     paddingVertical: 20,
-    // alignItems: 'center',
     paddingHorizontal: 16,
     marginTop: 16,
   },
   addressText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   changeView: {
@@ -189,7 +195,7 @@ const styles = StyleSheet.create({
   changeText: {
     color: Colors.white,
     fontSize: 12,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
   },
   rec3: {
     marginTop: 10,
@@ -200,7 +206,7 @@ const styles = StyleSheet.create({
   },
   detailText: {
     fontSize: 18,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Fonts.semiBold,
     color: Colors.black,
   },
   rec4: {
@@ -211,12 +217,11 @@ const styles = StyleSheet.create({
   },
   priceText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.black,
   },
   button: {
     paddingTop: 12,
-    // paddingHorizontal: 10,
     backgroundColor: Colors.white,
     paddingBottom: 20,
     marginTop: 1,

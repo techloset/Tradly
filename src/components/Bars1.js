@@ -1,12 +1,14 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Love2 from '../assets/images/Love2.svg';
-import Ellipse1 from '../assets/images/Ellipse1.svg';
-import Cart from '../assets/images/Cart.svg';
+import Cart3 from '../assets/images/Cart3.svg';
 import SearchInput from '../components/SearchInput';
 import Colors from '../assets/colors/Colors';
+import {useNavigation} from '@react-navigation/native';
+import Fonts from './Fonts';
 
 function Bars1({title}) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container1}>
       <View style={styles.gView}>
@@ -14,19 +16,21 @@ function Bars1({title}) {
         <View
           style={{
             flexDirection: 'row',
-            //   backgroundColor: '#000',
             justifyContent: 'space-evenly',
+            paddingHorizontal: 15,
             width: '30%',
-            //   marginRight: 10,
           }}>
-          <Love2 />
-          <Cart />
-          {/* <Ellipse1 style={{top: 0, right: 20}} /> */}
+          <TouchableOpacity onPress={() => navigation.navigate('Wishlist')}>
+            <Love2 />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('ProDetail')}>
+            <Cart3 />
+          </TouchableOpacity>
         </View>
       </View>
-      {/* <View style={{marginTop: 23}}>
+      <View style={{marginTop: 23}}>
         <SearchInput placeholder="Search Product    " />
-      </View> */}
+      </View>
     </View>
   );
 }
@@ -34,19 +38,17 @@ function Bars1({title}) {
 const styles = StyleSheet.create({
   container1: {backgroundColor: Colors.primary, paddingBottom: 16},
   gView: {
-    marginTop: 34,
+    marginTop: 24,
     marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    // backgroundColor: '#000',
     width: '100%',
-    paddingBottom: 20,
   },
   g: {
     fontSize: 24,
-    fontFamily: 'Montserrat-Bold',
-    color: 'rgba(255, 255, 255, 1)',
+    fontFamily: Fonts.bold,
+    color: Colors.white,
   },
 });
 

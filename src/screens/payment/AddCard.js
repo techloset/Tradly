@@ -6,8 +6,10 @@ import SectionHeader from '../../components/SectionHeader';
 import Button from '../../components/Button';
 import Mastercard from '../../assets/images/Mastercard.svg';
 import InputField from '../../components/InputField';
+import {useNavigation} from '@react-navigation/native';
 
 function AddCard(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <SectionHeader icon={<BackArrow />} title="Add Card" />
@@ -23,7 +25,11 @@ function AddCard(props) {
           </View>
         </View>
         <View style={styles.button}>
-          <Button title="Add Credit Card" />
+          <Button
+            title="Add Credit Card"
+            screen={'AddPayment'}
+            navigation={navigation}
+          />
         </View>
       </ScrollView>
     </View>

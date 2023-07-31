@@ -1,0 +1,197 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 65011712 bytes for Failed to commit area from 0x00000000c2200000 to 0x00000000c6000000 of length 65011712.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3619), pid=3040, tid=13156
+#
+# JRE version:  (11.0.13) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.13+0-b1751.21-8125866, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @C:\Users\fezia\Tradly\node_modules\react-native-safe-area-context\android\build\20230720_8138095585304932828.compiler.options
+
+Host: Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz, 4 cores, 3G,  Windows 10 , 64 bit Build 19041 (10.0.19041.3155)
+Time: Thu Jul 20 13:10:56 2023 Pakistan Standard Time elapsed time: 0.029408 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001a5aef61000):  JavaThread "Unknown thread" [_thread_in_vm, id=13156, stack(0x0000002140a00000,0x0000002140b00000)]
+
+Stack: [0x0000002140a00000,0x0000002140b00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6100fa]
+V  [jvm.dll+0x747090]
+V  [jvm.dll+0x7486ad]
+V  [jvm.dll+0x748d83]
+V  [jvm.dll+0x24ab48]
+V  [jvm.dll+0x60d164]
+V  [jvm.dll+0x601e75]
+V  [jvm.dll+0x308bdb]
+V  [jvm.dll+0x308b4a]
+V  [jvm.dll+0x308a22]
+V  [jvm.dll+0x30d986]
+V  [jvm.dll+0x357093]
+V  [jvm.dll+0x357796]
+V  [jvm.dll+0x357193]
+V  [jvm.dll+0x2e3448]
+V  [jvm.dll+0x2e45f7]
+V  [jvm.dll+0x7242e7]
+V  [jvm.dll+0x725adc]
+V  [jvm.dll+0x364629]
+V  [jvm.dll+0x707cee]
+V  [jvm.dll+0x3d2633]
+V  [jvm.dll+0x3d4a21]
+C  [jli.dll+0x536b]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17614]
+C  [ntdll.dll+0x526b1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001a5acdf6120, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001a5aef79000 GCTaskThread "GC Thread#0" [stack: 0x0000002140c00000,0x0000002140d00000] [id=15820]
+  0x000001a5aef92000 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000002140d00000,0x0000002140e00000] [id=4076]
+  0x000001a5aef93800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000002140e00000,0x0000002140f00000] [id=7140]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffd0e4f3dd7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001a5aef60ad0] Heap_lock - owner thread: 0x000001a5aef61000
+
+Heap address: 0x00000000c2200000, size: 990 MB, Compressed Oops mode: Non-zero based: 0x00000000c2200000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.016 Loaded shared library C:\Program Files\Android\Android Studio\jre\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff7a0cd0000 - 0x00007ff7a0cda000 	C:\Program Files\Android\Android Studio\jre\bin\java.exe
+0x00007ffd79a90000 - 0x00007ffd79c88000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffd79990000 - 0x00007ffd79a4f000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffd777f0000 - 0x00007ffd77ae6000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffd77660000 - 0x00007ffd77760000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffd65ad0000 - 0x00007ffd65ae9000 	C:\Program Files\Android\Android Studio\jre\bin\jli.dll
+0x00007ffd79430000 - 0x00007ffd795cd000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffd77210000 - 0x00007ffd77232000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffd77ef0000 - 0x00007ffd77f1c000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffd77490000 - 0x00007ffd775a5000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffd77170000 - 0x00007ffd7720d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffd61290000 - 0x00007ffd612a7000 	C:\Program Files\Android\Android Studio\jre\bin\VCRUNTIME140.dll
+0x00007ffd76490000 - 0x00007ffd7672a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e\COMCTL32.dll
+0x00007ffd77c40000 - 0x00007ffd77cde000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffd784c0000 - 0x00007ffd784f0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffd2afe0000 - 0x00007ffd2b07d000 	C:\Program Files\Android\Android Studio\jre\bin\msvcp140.dll
+0x00007ffd0e200000 - 0x00007ffd0ed02000 	C:\Program Files\Android\Android Studio\jre\bin\server\jvm.dll
+0x00007ffd77af0000 - 0x00007ffd77b9f000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffd77ba0000 - 0x00007ffd77c3c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffd78560000 - 0x00007ffd78686000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffd77f20000 - 0x00007ffd77f28000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffd6d1b0000 - 0x00007ffd6d1b9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffd784f0000 - 0x00007ffd7855b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffd66d80000 - 0x00007ffd66da7000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffd67ec0000 - 0x00007ffd67eca000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffd74a00000 - 0x00007ffd74a12000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffd5fe00000 - 0x00007ffd5fe11000 	C:\Program Files\Android\Android Studio\jre\bin\verify.dll
+0x00007ffd76b80000 - 0x00007ffd76d64000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffd76a40000 - 0x00007ffd76a74000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffd77760000 - 0x00007ffd777e2000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffd2b580000 - 0x00007ffd2b5a9000 	C:\Program Files\Android\Android Studio\jre\bin\java.dll
+0x00007ffd68a50000 - 0x00007ffd68a5b000 	C:\Program Files\Android\Android Studio\jre\bin\jimage.dll
+0x00007ffd3e3f0000 - 0x00007ffd3e408000 	C:\Program Files\Android\Android Studio\jre\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Android\Android Studio\jre\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.1110_none_60b5254171f9507e;C:\Program Files\Android\Android Studio\jre\bin\server
+
+VM Arguments:
+java_command: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @C:\Users\fezia\Tradly\node_modules\react-native-safe-area-context\android\build\20230720_8138095585304932828.compiler.options
+java_class_path (initial): C:\Users\fezia\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-compiler-embeddable\1.6.20\18f66cca4301c12893ebe4ef47d65c3d9d2bff9b\kotlin-compiler-embeddable-1.6.20.jar;C:\Users\fezia\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-reflect\1.6.20\669965154723f1a712e8677af0cc5470dfdab81c\kotlin-reflect-1.6.20.jar;C:\Users\fezia\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.6.20\6cedc143badbb4f1c6b7f5a340b04edff1743208\kotlin-stdlib-1.6.20.jar;C:\Users\fezia\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-script-runtime\1.6.20\a115c367e0fd9c8909293b208689afca0c88a6f1\kotlin-script-runtime-1.6.20.jar;C:\Users\fezia\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-daemon-embeddable\1.6.20\d4cac343029f48f106c57f457384771165d7deb5\kotlin-daemon-embeddable-1.6.20.jar;C:\Users\fezia\.gradle\caches\modules-2\files-2.1\org.jetbrains.intellij.deps\trove4j\1.0.20200330\3afb14d5f9ceb459d724e907a21145e8ff394f02\trove4j-1.0.20200330.jar;C:\Users\fezia\.gradle\caches\modules-2\files-2.1\net.java.dev.jna\jna\5.6.0\330f2244e9030119ab3030fc3fededc86713d9cc\jna-5.6.0.jar;C:\Users\fezia\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.6.20\27b4562b6713d70f458c6d7ea39aadacb8e6a92b\kotlin-stdlib-common-1.6.20.jar;C:\Users\fezia\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 3                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 1                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 4                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 65011712                                  {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 1038090240                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5830732                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122913754                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122913754                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Android\Android Studio\jre
+CLASSPATH=C:\Users\fezia\Tradly\android\\gradle\wrapper\gradle-wrapper.jar
+PATH=C:\Users\fezia\Tradly\android\node_modules\.bin;C:\Users\fezia\Tradly\node_modules\.bin;C:\Users\fezia\node_modules\.bin;C:\Users\node_modules\.bin;C:\node_modules\.bin;C:\Program Files\nodejs;C:\Users\fezia\AppData\Local\Temp\yarn--1689840503311-0.5493678242574487;C:\Users\fezia\Tradly\node_modules\.bin;C:\Users\fezia\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Users\fezia\AppData\Local\Yarn\bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Program Files\Microsoft\jdk-11.0.18.10-hotspot\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Users\fezia\AppData\Local\Android\Sdk\platform-tools;C:\Users\fezia\AppData\Local\Microsoft\WindowsApps;C:\Users\fezia\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\fezia\AppData\Local\Android\Sdk\platform-tools;C:\Users\fezia\AppData\Roaming\npm
+USERNAME=fezia
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 19041 (10.0.19041.3155)
+OS uptime: 4 days 12:48 hours
+Hyper-V role detected
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9 microcode 0x21, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, system-wide physical 3959M (262M free)
+TotalPageFile size 16247M (AvailPageFile size 3M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 51M, peak: 113M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.13+0-b1751.21-8125866) for windows-amd64 JRE (11.0.13+0-b1751.21-8125866), built on Feb  2 2022 03:00:22 by "builder" with MS VC++ 14.0 (VS2015)
+
+END.

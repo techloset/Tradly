@@ -1,17 +1,14 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, TouchableOpacity} from 'react-native';
 import Colors from '../../assets/colors/Colors';
 import Bars1 from '../../components/Bars1';
-import Home from '../../assets/images/home.svg';
-import Search from '../../assets/images/Search.svg';
-import Order from '../../assets/images/Order.svg';
-import Store from '../../assets/images/Store.svg';
-import Profile from '../../assets/images/Profile.svg';
-import TabItem from '../../components/IconBars';
 import Avatar4 from '../../assets/images/avatar4.svg';
 import Button1 from '../../components/Button1';
+import BottomTab from '../../components/BottomTab';
+import {useNavigation} from '@react-navigation/native';
 
 function EditStore(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <Bars1 title="My Store" />
@@ -24,7 +21,9 @@ function EditStore(props) {
           <Text style={styles.editText}>Edit store</Text>
         </View>
         <View style={styles.store}>
-          <Text style={styles.storeText}> View Store</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('StoreProfile')}>
+            <Text style={styles.storeText}> View Store</Text>
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.removeView}>
@@ -32,14 +31,11 @@ function EditStore(props) {
       </View>
       <View style={styles.productView}>
         <Text style={styles.productText}>You dont have product</Text>
-        <Button1 title="Add Product" />
-      </View>
-      <View style={styles.bar}>
-        <TabItem icon={<Home />} label="Home" />
-        <TabItem icon={<Search />} label="Browse" />
-        <TabItem icon={<Store />} label="Store" />
-        <TabItem icon={<Order />} label="Order History" />
-        <TabItem icon={<Profile />} label="Profile" />
+        <Button1
+          title="Add Product"
+          screen={'AddProduct'}
+          navigation={navigation}
+        />
       </View>
     </View>
   );
@@ -114,7 +110,7 @@ const styles = StyleSheet.create({
   },
   productView: {
     backgroundColor: Colors.grey,
-    flex: 0.8,
+    flex: 1,
     alignItems: 'center',
   },
   productText: {

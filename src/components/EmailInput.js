@@ -1,5 +1,8 @@
 import React from 'react';
 import {View, StyleSheet, TextInput} from 'react-native';
+import Colors from '../assets/colors/Colors';
+import Fonts from './Fonts';
+
 function EmailInput({icon, ...otherProps}) {
   return (
     <View style={styles.container}>
@@ -14,15 +17,15 @@ function EmailInput({icon, ...otherProps}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#33907C',
+    backgroundColor: Colors.primary,
     marginHorizontal: 32,
     borderRadius: 24,
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 1)',
+    borderColor: Colors.white,
     paddingLeft: 16,
   },
   email: {
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: Fonts.regular,
     fontSize: 18,
   },
 });

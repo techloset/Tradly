@@ -1,19 +1,20 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../../assets/colors/Colors';
+import Fonts from '../../components/Fonts';
 
 export const styles = StyleSheet.create({
   container: {backgroundColor: Colors.primary, flex: 1},
   welcome: {
     fontSize: 24,
-    fontFamily: 'Montserrat-Medium',
-    color: 'rgba(255, 255, 255, 1)',
+    fontFamily: Fonts.medium,
+    color: Colors.white,
     textAlign: 'center',
     marginTop: 137,
   },
   login: {
     fontSize: 16,
-    fontFamily: 'Montserrat-Regular',
-    color: 'rgba(255, 255, 255, 1)',
+    fontFamily: Fonts.regular,
+    color: Colors.white,
     textAlign: 'center',
     marginTop: 25,
     marginHorizontal: 24,
@@ -21,7 +22,6 @@ export const styles = StyleSheet.create({
   input: {
     marginTop: 25,
     rowGap: 16,
-    // paddingLeft: 60,
   },
   button: {
     marginTop: 57,
@@ -33,8 +33,8 @@ export const styles = StyleSheet.create({
   },
   forgotText: {
     fontSize: 18,
-    color: '#FFFFFF',
-    fontFamily: 'Montserrat-Regular',
+    color: Colors.white,
+    fontFamily: Fonts.regular,
   },
   account: {
     marginTop: 64,
@@ -44,8 +44,8 @@ export const styles = StyleSheet.create({
   },
   signup: {
     fontSize: 18,
-    color: '#FFFFFF',
-    fontFamily: 'Montserrat-Regular',
+    color: Colors.white,
+    fontFamily: Fonts.regular,
     marginLeft: 5,
   },
   account1: {
@@ -56,8 +56,8 @@ export const styles = StyleSheet.create({
   },
   signup: {
     fontSize: 18,
-    color: '#FFFFFF',
-    fontFamily: 'Montserrat-Regular',
+    color: Colors.white,
+    fontFamily: Fonts.regular,
     marginLeft: 5,
   },
   code: {
@@ -73,6 +73,6 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   underlineStyleHighLighted: {
-    borderColor: 'rgba(255, 255, 255, 1)',
+    borderColor: Colors.white,
   },
 });

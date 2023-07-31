@@ -6,8 +6,11 @@ import SectionHeader from '../../components/SectionHeader';
 import Current from '../../assets/images/Current.svg';
 import AppInput from '../../components/AppInput';
 import Button from '../../components/Button';
+import {useNavigation} from '@react-navigation/native';
+import Fonts from '../../components/Fonts';
 
 function Checkout(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <SectionHeader icon={<BackArrow />} title="Add a new address" />
@@ -19,7 +22,7 @@ function Checkout(props) {
       <ScrollView>
         <AppInput />
         <View style={styles.button}>
-          <Button title="Save" />
+          <Button title="Save" screen={'MyCart2'} navigation={navigation} />
         </View>
       </ScrollView>
     </View>
@@ -41,7 +44,7 @@ const styles = StyleSheet.create({
   },
   addressText: {
     fontSize: 16,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.blue,
   },
   button: {

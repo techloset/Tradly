@@ -6,8 +6,12 @@ import SectionHeader from '../../components/SectionHeader';
 import Rectangle292 from '../../assets/images/Rectangle292.svg';
 import Vector3 from '../../assets/images/Vector3.svg';
 import Button from '../../components/Button';
+import {useNavigation} from '@react-navigation/native';
+import Fonts from '../../components/Fonts';
+import Disc from '../../components/Disc';
 
 function MyCart2(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <SectionHeader icon={<BackArrow />} title="My Cart" />
@@ -19,13 +23,14 @@ function MyCart2(props) {
             <Text style={styles.changeText}>Change</Text>
           </View>
         </View>
-        <Text>Kualalumpur, Malaysia</Text>
+        <Text style={styles.mal}>Kualalumpur, Malaysia</Text>
       </View>
       <View style={styles.rec}>
         <Rectangle292 />
         <View style={styles.cocaView}>
           <Text style={styles.cocaText}>Coca Cola</Text>
-          <Text style={styles.price}>$25</Text>
+
+          <Disc originalPrice={50} discountPercentage={50} />
           <View style={{flexDirection: 'row', marginTop: 10}}>
             <Text style={styles.qty}>Qty : 1</Text>
             <Vector3 style={{position: 'relative', top: 8, left: 5}} />
@@ -51,7 +56,11 @@ function MyCart2(props) {
         <Text style={styles.detailText}>$25</Text>
       </View>
       <View style={styles.button}>
-        <Button title="Continue To Payment" />
+        <Button
+          title="Continue To Payment"
+          screen={'Payment'}
+          navigation={navigation}
+        />
       </View>
     </View>
   );
@@ -66,12 +75,11 @@ const styles = StyleSheet.create({
   address: {
     backgroundColor: Colors.white,
     paddingVertical: 20,
-    // alignItems: 'center',
     paddingHorizontal: 16,
   },
   addressText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   changeView: {
@@ -85,7 +93,7 @@ const styles = StyleSheet.create({
   changeText: {
     color: Colors.white,
     fontSize: 12,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
   },
   rec: {
     marginTop: 30,
@@ -100,19 +108,19 @@ const styles = StyleSheet.create({
   },
   cocaText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: Fonts.regular,
     color: Colors.neutralBlack,
     marginTop: 12,
   },
   price: {
     fontSize: 18,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: Fonts.bold,
     color: Colors.primary,
     marginTop: 12,
   },
   qty: {
     fontSize: 12,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   removeView: {
@@ -124,7 +132,7 @@ const styles = StyleSheet.create({
   },
   removeText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   rec2: {
@@ -136,7 +144,7 @@ const styles = StyleSheet.create({
   },
   detailText: {
     fontSize: 18,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Fonts.semiBold,
     color: Colors.black,
   },
   rec3: {
@@ -147,7 +155,7 @@ const styles = StyleSheet.create({
   },
   priceText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.black,
   },
   total: {
@@ -164,6 +172,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     paddingTop: 12,
     paddingBottom: 28,
+  },
+  mal: {
+    fontSize: 14,
+    fontFamily: Fonts.medium,
+    color: Colors.neutralBlack,
   },
 });
 export default MyCart2;

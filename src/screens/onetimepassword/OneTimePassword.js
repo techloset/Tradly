@@ -4,8 +4,10 @@ import {styles} from './OneStyle';
 import PasswordInput from '../../components/PasswordInput';
 import Button1 from '../../components/Button1';
 import Back from '../../assets/images/Back.svg';
+import {useNavigation} from '@react-navigation/native';
 
 function OneTimePassword(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <TouchableOpacity>
@@ -25,7 +27,11 @@ function OneTimePassword(props) {
         </TouchableOpacity>
       </View>
       <View style={styles.button}>
-        <Button1 title={'Next'} />
+        <Button1
+          title={'Next'}
+          screen={'PhoneVerification'}
+          navigation={navigation}
+        />
       </View>
     </View>
   );

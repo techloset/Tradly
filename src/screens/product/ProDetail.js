@@ -5,6 +5,7 @@ import {
   ImageBackground,
   Text,
   ScrollView,
+  TouchableOpacity,
 } from 'react-native';
 import Colors from '../../assets/colors/Colors';
 import Group434 from '../../assets/images/Group434.svg';
@@ -14,8 +15,12 @@ import Group437 from '../../assets/images/Group437.svg';
 import Avatar3 from '../../assets/images/Avatar3.svg';
 import Lorem from '../../assets/images/Lorem.svg';
 import Button from '../../components/Button';
+import {useNavigation} from '@react-navigation/native';
+import Disc from '../../components/Disc';
+import Fonts from '../../components/Fonts';
 
 function ProDetail(props) {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -30,7 +35,9 @@ function ProDetail(props) {
             marginLeft: 12,
             justifyContent: 'space-between',
           }}>
-          <Group434 />
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <Group434 />
+          </TouchableOpacity>
           <View
             style={{
               flexDirection: 'row',
@@ -90,15 +97,15 @@ function ProDetail(props) {
       </ImageBackground>
       <View
         style={{
-          backgroundColor: '#fff',
+          backgroundColor: Colors.white,
           marginTop: -170,
           //   marginLeft: 16,
         }}>
         <Text
           style={{
             fontSize: 18,
-            fontFamily: 'Montserrat-Bold',
-            color: '#4F4F4F',
+            fontFamily: Fonts.bold,
+            color: Colors.neutralBlack,
             marginTop: 16,
             marginLeft: 16,
           }}>
@@ -111,23 +118,14 @@ function ProDetail(props) {
             marginLeft: 16,
             paddingBottom: 25,
           }}>
-          <Text
-            style={{
-              fontSize: 18,
-              fontFamily: 'Montserrat-Bold',
-              color: '#33907C',
-              //   marginTop: 10,
-            }}>
-            $25
-          </Text>
-          <Text>$50 50% off</Text>
+          <Disc originalPrice={50} discountPercentage={50} />
         </View>
       </View>
       <View
         style={{
           flexDirection: 'row',
           marginTop: 6,
-          backgroundColor: '#fff',
+          backgroundColor: Colors.white,
           paddingVertical: 28,
           paddingLeft: 16,
           alignItems: 'center',
@@ -144,14 +142,14 @@ function ProDetail(props) {
           <Text
             style={{
               fontSize: 14,
-              fontFamily: 'Montserrat-Medium',
-              color: '#4F4F4F',
+              fontFamily: Fonts.medium,
+              color: Colors.neutralBlack,
             }}>
             Tradly Store
           </Text>
           <Text
             style={{
-              color: '#FFFFFF',
+              color: Colors.white,
               backgroundColor: Colors.primary,
               width: '30%',
               textAlign: 'center',
@@ -165,7 +163,7 @@ function ProDetail(props) {
       <ScrollView>
         <View
           style={{
-            backgroundColor: '#fff',
+            backgroundColor: Colors.white,
             marginTop: 6,
             paddingTop: 60,
             paddingLeft: 16,
@@ -175,117 +173,141 @@ function ProDetail(props) {
           <Lorem />
         </View>
         <View
-          style={{backgroundColor: '#fff', paddingTop: 10, paddingBottom: 28}}>
-          <Button title="Add To Cart" />
+          style={{
+            backgroundColor: Colors.white,
+            paddingTop: 10,
+            paddingBottom: 28,
+          }}>
+          <Button
+            title="Add To Cart"
+            screen={'MyCart'}
+            navigation={navigation}
+          />
         </View>
         <View
           style={{
             backgroundColor: Colors.white,
             marginTop: 6,
-            paddingLeft: 16,
+            paddingLeft: 20,
             paddingTop: 27,
           }}>
           <View
             style={{
               flexDirection: 'row',
-              //   backgroundColor: '#000',
-              justifyContent: 'space-around',
+              // backgroundColor: Colors.primary,
+              justifyContent: 'space-between',
               //   marginHorizontal: 10,
             }}>
-            <Text
-              style={{
-                fontSize: 14,
-                fontFamily: 'Montserrat-Regular',
-                color: '#4F4F4F',
-              }}>
-              Condition
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-                fontFamily: 'Montserrat-Regular',
-                color: '#4F4F4F',
-              }}>
-              Organic
-            </Text>
+            <View style={{width: '30%'}}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontFamily: Fonts.regular,
+                  color: Colors.neutralBlack,
+                }}>
+                Condition
+              </Text>
+            </View>
+            <View style={{width: '55%'}}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontFamily: Fonts.regular,
+                  color: Colors.neutralBlack,
+                }}>
+                Organic
+              </Text>
+            </View>
           </View>
           <View
             style={{
               flexDirection: 'row',
               //   backgroundColor: '#000',
-              justifyContent: 'space-around',
+              justifyContent: 'space-between',
               marginTop: 20,
             }}>
-            <Text
-              style={{
-                fontSize: 14,
-                fontFamily: 'Montserrat-Regular',
-                color: '#4F4F4F',
-              }}>
-              Price Type
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-                fontFamily: 'Montserrat-Regular',
-                color: '#4F4F4F',
-              }}>
-              Fixed
-            </Text>
+            <View style={{width: '30%'}}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontFamily: Fonts.regular,
+                  color: Colors.neutralBlack,
+                }}>
+                Price Type
+              </Text>
+            </View>
+            <View style={{width: '55%'}}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontFamily: Fonts.regular,
+                  color: Colors.neutralBlack,
+                }}>
+                Fixed
+              </Text>
+            </View>
           </View>
           <View
             style={{
               flexDirection: 'row',
               //   backgroundColor: '#000',
-              justifyContent: 'space-around',
+              justifyContent: 'space-between',
               marginTop: 20,
             }}>
-            <Text
-              style={{
-                fontSize: 14,
-                fontFamily: 'Montserrat-Regular',
-                color: '#4F4F4F',
-              }}>
-              Category
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-                fontFamily: 'Montserrat-Regular',
-                color: '#4F4F4F',
-              }}>
-              Beverages
-            </Text>
+            <View style={{width: '30%'}}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontFamily: Fonts.regular,
+                  color: Colors.neutralBlack,
+                }}>
+                Category
+              </Text>
+            </View>
+            <View style={{width: '55%'}}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontFamily: Fonts.regular,
+                  color: Colors.neutralBlack,
+                }}>
+                Beverages
+              </Text>
+            </View>
           </View>
           <View
             style={{
               flexDirection: 'row',
               //   backgroundColor: '#000',
-              justifyContent: 'space-around',
+              justifyContent: 'space-between',
               marginTop: 20,
               marginBottom: 20,
             }}>
-            <Text
-              style={{
-                fontSize: 14,
-                fontFamily: 'Montserrat-Regular',
-                color: '#4F4F4F',
-              }}>
-              Location
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-                fontFamily: 'Montserrat-Regular',
-                color: '#4F4F4F',
-              }}>
-              Kualalumpur Malaysia
-            </Text>
+            <View style={{width: '30%'}}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontFamily: Fonts.regular,
+                  color: Colors.neutralBlack,
+                }}>
+                Location
+              </Text>
+            </View>
+            <View style={{width: '55%'}}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  fontFamily: Fonts.regular,
+                  color: Colors.neutralBlack,
+                }}>
+                Kualalumpur Malaysia
+              </Text>
+            </View>
           </View>
         </View>
         <View
           style={{
-            backgroundColor: '#fff',
+            backgroundColor: Colors.white,
             marginTop: 6,
             paddingVertical: 20,
             paddingLeft: 24,
@@ -293,8 +315,8 @@ function ProDetail(props) {
           <Text
             style={{
               fontSize: 18,
-              fontFamily: 'Montserrat-SemiBold',
-              color: '#000000',
+              fontFamily: Fonts.semiBold,
+              color: Colors.black,
             }}>
             Additional Detail
           </Text>
@@ -302,14 +324,35 @@ function ProDetail(props) {
             style={{
               marginTop: 30,
               flexDirection: 'row',
-              //   justifyContent: 'space-between',
+              // justifyContent: 'space-between',
               //   backgroundColor: '#000',
               height: 40,
             }}>
-            <Text>Delivery Detail</Text>
-            <Text style={{textAlign: 'justify'}}>
-              Home Delivery Available, Cash On Delivery
-            </Text>
+            <View style={{width: '35%'}}>
+              <Text
+                style={{
+                  fontSize: 14,
+                  color: Colors.neutralBlack,
+                  fontFamily: Fonts.light,
+                }}>
+                Delivery Detail
+              </Text>
+            </View>
+            <View
+              style={{
+                width: '50%',
+                marginLeft: 20,
+              }}>
+              <Text
+                style={{
+                  textAlign: 'justify',
+                  fontSize: 14,
+                  fontFamily: Fonts.medium,
+                  color: Colors.neutralBlack,
+                }}>
+                Home Delivery Available, Cash On Delivery
+              </Text>
+            </View>
           </View>
         </View>
       </ScrollView>

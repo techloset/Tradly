@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import Colors from '../assets/colors/Colors';
+import Fonts from './Fonts';
 
 function IconText({icon, text}) {
   return (
@@ -22,11 +23,11 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     borderRadius: 24,
     borderWidth: 1,
-    borderColor: '#FFFFFF',
+    borderColor: Colors.white,
   },
   text: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.white,
   },
 });

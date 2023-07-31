@@ -12,6 +12,8 @@ import BackArrow from '../../assets/images/BackArrow.svg';
 import SectionHeader from '../../components/SectionHeader';
 import Avatar5 from '../../assets/images/Avatar5.svg';
 import Cross from '../../assets/images/Cross.svg';
+import Psum from '../../assets/images/Psum.svg';
+import Fonts from '../../components/Fonts';
 
 const data = [
   {
@@ -56,7 +58,7 @@ const renderItem = ({item}) => (
   </TouchableOpacity>
 );
 
-function StoreProfile(props) {
+function StoreProfile({navigation}) {
   return (
     <View style={styles.container}>
       <View>
@@ -77,7 +79,7 @@ function StoreProfile(props) {
           </View>
         </View>
         <View style={styles.lorem}>
-          <Text style={styles.loremText}>Lorem ipsum dolor sit amet,</Text>
+          <Psum />
         </View>
         <View style={styles.button}>
           <View style={styles.groView}>
@@ -103,7 +105,9 @@ function StoreProfile(props) {
           <Text style={styles.allText}>All Product</Text>
         </View>
         <View style={styles.fruit}>
-          <Text style={styles.fruitText}>Fruit</Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Fruit1')}>
+            <Text style={styles.fruitText}>Fruit</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.vegetables}>
           <Text style={styles.fruitText}>Vegetables</Text>
@@ -117,6 +121,7 @@ function StoreProfile(props) {
         renderItem={renderItem}
         keyExtractor={item => item.id}
         numColumns={2}
+        contentContainerStyle={styles.flat}
       />
     </View>
   );
@@ -147,7 +152,7 @@ const styles = StyleSheet.create({
   },
   tradText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   follow: {
@@ -161,7 +166,7 @@ const styles = StyleSheet.create({
   },
   followText: {
     fontSize: 12,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.white,
   },
   lorem: {
@@ -169,7 +174,7 @@ const styles = StyleSheet.create({
   },
   loremText: {
     fontSize: 12,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   button: {
@@ -189,7 +194,7 @@ const styles = StyleSheet.create({
   },
   gro: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: Fonts.regular,
     color: Colors.neutralBlack,
   },
   button2: {
@@ -198,11 +203,10 @@ const styles = StyleSheet.create({
     paddingTop: 24,
     backgroundColor: Colors.white,
     justifyContent: 'space-evenly',
-    // paddingHorizontal: 50,
   },
   totalF: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   zero: {
@@ -228,7 +232,7 @@ const styles = StyleSheet.create({
   },
   allText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.white,
   },
   fruit: {
@@ -243,7 +247,7 @@ const styles = StyleSheet.create({
   },
   fruitText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   vegetables: {
@@ -265,6 +269,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1.5,
     borderColor: Colors.grey,
+  },
+  flat: {
+    paddingHorizontal: 12,
   },
 });
 export default StoreProfile;

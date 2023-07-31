@@ -1,6 +1,7 @@
 import React, {useState, useRef} from 'react';
 import {View, Text, Image, FlatList, TouchableOpacity} from 'react-native';
 import Colors from '../assets/colors/Colors';
+import Fonts from './Fonts';
 
 const MyFlatList = () => {
   const slidesData = [
@@ -78,15 +79,12 @@ const styles = {
   container: {
     height: 200,
     marginRight: 5,
-    // marginTop: 10,
   },
   slide: {
     flex: 1,
-    // padding: 10,
     borderRadius: 10,
     marginRight: 10,
     width: 300,
-    // marginTop: 32,
   },
   defaultSlideContent: {
     flex: 1,
@@ -96,7 +94,6 @@ const styles = {
   slideContent: {
     flex: 1,
     justifyContent: 'center',
-    // padding: 20,
     marginTop: 20,
     marginLeft: 23,
   },
@@ -107,7 +104,7 @@ const styles = {
   },
   totalBalanceText: {
     fontSize: 16,
-    fontFamily: 'Inter-Medium',
+    fontFamily: Fonts.medium,
     color: '#000000',
   },
   balanceText: {
@@ -118,13 +115,13 @@ const styles = {
   },
   bcmText: {
     fontSize: 14,
-    fontFamily: 'Inter-Bold',
+    fontFamily: Fonts.bold,
     color: '#000000',
     marginTop: 20,
   },
   accountText: {
     fontSize: 14,
-    fontFamily: 'Inter-Medium',
+    fontFamily: Fonts.medium,
     color: '#000000',
     marginBottom: 20,
   },

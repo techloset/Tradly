@@ -1,17 +1,15 @@
 import {StyleSheet} from 'react-native';
 import Colors from '../../assets/colors/Colors';
+import Fonts from '../../components/Fonts';
 
 export const styles = StyleSheet.create({
   container: {backgroundColor: Colors.white, flex: 1},
   back: {
-    marginTop: -10,
-    marginLeft: 16,
-    // marginHorizontal: 10,
-    height: 450,
-    marginBottom: -55,
-  },
-  backImage: {
-    flex: 1,
+    height: '25%',
+    width: '100%',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    paddingHorizontal: 40,
   },
   textView: {
     marginTop: 51,
@@ -20,14 +18,14 @@ export const styles = StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    fontFamily: 'Montserrat-SemiBold',
-    color: '#fff',
+    fontFamily: Fonts.semiBold,
+    color: Colors.white,
   },
   startView: {
     marginTop: 17,
     width: '40%',
     height: 35,
-    borderColor: '#fff',
+    borderColor: Colors.white,
     borderRadius: 14,
     borderWidth: 1,
     marginLeft: 40,
@@ -36,8 +34,8 @@ export const styles = StyleSheet.create({
   },
   startText: {
     fontSize: 12,
-    fontFamily: 'Montserrat-Bold',
-    color: '#fff',
+    fontFamily: Fonts.bold,
+    color: Colors.white,
   },
   new: {
     flexDirection: 'row',
@@ -48,8 +46,8 @@ export const styles = StyleSheet.create({
   },
   newText: {
     fontSize: 18,
-    fontFamily: 'Montserrat-Bold',
-    color: 'rgba(79, 79, 79, 1)',
+    fontFamily: Fonts.bold,
+    color: Colors.neutralBlack,
   },
   see: {
     backgroundColor: Colors.primary,
@@ -61,19 +59,67 @@ export const styles = StyleSheet.create({
   },
   seeText: {
     fontSize: 12,
-    fontFamily: 'Montserrat-Medium',
-    color: '#FFFFFF',
+    fontFamily: Fonts.medium,
+    color: Colors.white,
   },
   scroll: {
     marginTop: 20,
-    marginHorizontal: 20,
-    marginBottom: 30,
-    // backgroundColor: '#E5E5E5',
+    marginHorizontal: 10,
   },
   bar: {
     marginTop: 16,
-    // marginHorizontal: 10,
     flexDirection: 'row',
     justifyContent: 'space-around',
+    marginBottom: 8,
+  },
+  new1: {
+    flexDirection: 'row',
+    marginVertical: 15,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+
+  newText1: {
+    fontSize: 18,
+    fontFamily: Fonts.bold,
+    color: Colors.neutralBlack,
+  },
+  see1: {
+    backgroundColor: Colors.primary,
+    width: '25%',
+    height: 25,
+    borderRadius: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  seeText1: {
+    fontSize: 12,
+    fontFamily: Fonts.medium,
+    color: Colors.white,
+  },
+  storeView: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginHorizontal: 10,
+    marginTop: 22,
+  },
+  store2: {
+    fontSize: 18,
+    fontFamily: Fonts.bold,
+    color: Colors.white,
+  },
+  see3: {
+    backgroundColor: Colors.white,
+    width: '25%',
+    height: 25,
+    borderRadius: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  storeText: {
+    fontSize: 12,
+    fontFamily: Fonts.medium,
+    color: Colors.primary,
   },
 });

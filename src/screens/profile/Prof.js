@@ -1,14 +1,9 @@
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import Bars1 from '../../components/Bars1';
-import Home from '../../assets/images/home.svg';
-import Search from '../../assets/images/Search.svg';
-import Order from '../../assets/images/Order.svg';
-import Store from '../../assets/images/Store.svg';
-import Profile from '../../assets/images/Profile.svg';
 import Oval from '../../assets/images/Oval.svg';
-import TabItem from '../../components/IconBars';
 import Colors from '../../assets/colors/Colors';
+import Fonts from '../../components/Fonts';
 
 function Prof(props) {
   return (
@@ -44,21 +39,13 @@ function Prof(props) {
           </View>
         </View>
       </View>
-
-      <View style={styles.bar}>
-        <TabItem icon={<Home />} label="Home" />
-        <TabItem icon={<Search />} label="Browse" />
-        <TabItem icon={<Store />} label="Store" />
-        <TabItem icon={<Order />} label="Order History" />
-        <TabItem icon={<Profile />} label="Profile" />
-      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F6F9FF',
+    backgroundColor: Colors.background,
     flex: 1,
   },
   cont: {
@@ -74,12 +61,12 @@ const styles = StyleSheet.create({
   },
   trad: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: Fonts.bold,
     color: Colors.white,
   },
   trad2: {
     fontSize: 12,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.white,
     marginTop: 7,
   },
@@ -98,12 +85,12 @@ const styles = StyleSheet.create({
   },
   profText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.neutralBlack,
   },
   logText: {
     fontSize: 14,
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     color: Colors.primary,
   },
   bar: {

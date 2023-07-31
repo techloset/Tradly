@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, StyleSheet, TextInput} from 'react-native';
 import Group433 from '../assets/images/Group433.svg';
+import Colors from '../assets/colors/Colors';
+import Fonts from './Fonts';
 
 function PasswordInput({icon, ...otherProps}) {
   return (
@@ -19,15 +21,15 @@ function PasswordInput({icon, ...otherProps}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#33907C',
+    backgroundColor: Colors.primary,
     marginHorizontal: 32,
     borderRadius: 24,
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 1)',
+    borderColor: Colors.white,
     paddingLeft: 75,
   },
   password: {
-    fontFamily: 'Montserrat-Bold',
+    fontFamily: Fonts.bold,
     fontSize: 18,
   },
 });

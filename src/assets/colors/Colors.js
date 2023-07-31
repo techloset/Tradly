@@ -13,6 +13,7 @@ const button2 = 'rgba(255, 255, 255, 1)';
 const card = '#FFD703';
 const green = '#72FF03';
 const neutralBlack = '#4F4F4F';
+const background = '#F6F9FF';
 
 export default {
   primary,
@@ -30,4 +31,5 @@ export default {
   card,
   green,
   neutralBlack,
+  background,
 };

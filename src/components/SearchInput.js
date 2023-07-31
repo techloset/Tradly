@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, StyleSheet, TextInput} from 'react-native';
 import Group5 from '../assets/images/Group5.svg';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import colors from '../assets/colors/Colors';
+import Colors from '../assets/colors/Colors';
+import Fonts from './Fonts';
 
 function SearchInput({icon, ...otherProps}) {
   return (
@@ -21,18 +21,18 @@ function SearchInput({icon, ...otherProps}) {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'rgba(255, 255, 255, 1)',
+    backgroundColor: Colors.white,
     marginHorizontal: 10,
     borderRadius: 24,
     borderWidth: 1,
-    borderColor: 'rgba(255, 255, 255, 1)',
+    borderColor: Colors.white,
     paddingLeft: 64,
     paddingRight: 10,
     flexDirection: 'row',
     width: '90%',
   },
   email: {
-    fontFamily: 'Montserrat-Medium',
+    fontFamily: Fonts.medium,
     fontSize: 14,
   },
 });
